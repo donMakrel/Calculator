@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Title</title>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="calculator dark">
+      <div class="theme-toggler active">
+        <i class="toggler-icon"></i>
+      </div>
+
+      <div id="calculator">
+        <div id="mJStack"></div>
+        <div id="stack">
+          <input value="0" id="stackTop" readonly />
+        </div>
+        <div>
+          <input value="0" id="stackMid" readonly />
+        </div>
+        <div>
+          <input value="0" id="stackBot" readonly />
+        </div>
+        <div class="buttons">
+          <table>
+            <tr>
+              <td><button class="btn-operator" onclick="clearStackTop()" type="button" value="C" id="clear">C</button>
+              </td>
+              <td><button class="btn-operator" onclick="divide()" type="button" value="/" id="/">&divide;</button></td>
+              <td><button class="btn-operator" onclick="multiply()" type="button" value="*" id="*">&times;</button></td>
+              <td><button class="btn-operator" onclick="pow()" type="button" value="x^y">x^y</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="7" id="7">7</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="8">8</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="9" id="9">9</button></td>
+              <td><button class="btn-operator" onclick="subtract()" type="button" value="-" id="-">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="4" id="4">4</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="5" id="5">5</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="6" id="6">6</button></td>
+              <td><button class="btn-operator" onclick="add()" id="+">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="1" id="1">1</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="2" id="2">2</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="3" id="3">3</button></td>
+              <td rowspan="2"><button class="btn-equal" onclick="addToStack()" type="button" value="Enter"
+                  id="equal">=</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn-operator" onclick="mod()" type="button" value="mod" id="mod">mod</button></td>
+              <td><button class="btn-number" onclick="addToCurrent(this)" type="button" value="0" id="0">0</button></td>
+              <td><button class="btn-operator" onclick="gcd()" type="button" value="gcd" id="gcd">gcd</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn-operator" onclick="clearStack()" type="button" value="CC" id="aclear">AC</button>
+              </td>
+              <td><button class="btn-operator" onclick="swapxy()" type="button" value="x->y" id="xy">x->y</button></td>
+              <td><button class="btn-operator" onclick="frac()" type="button" value="frac" id="frac">frac</button></td>
+              <td><button class="btn-operator" onclick="sumOfTwoOdds()" type="button" value="p+q">p+q</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
